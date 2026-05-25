@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function camelize( word) {
+            let splitWord = word.split();
+            let indexes = splitWord.filter(item => item.name === "-");
+            console.log(indexes)
+            let counter = 0
+            for (let index of indexes) {
+                splitWord[index - counter + 1].toUpperCase();
+                splitWord.splice(index-counter,1);
+            }
+            
+            
+            return splitWord.join()
+        }
+
+        word = "hello-my-name-is-jeff";
+        console.log(camelize(word));
+    </script>
+    
+</body>
+</html>
